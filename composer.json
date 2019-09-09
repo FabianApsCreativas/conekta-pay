@@ -1,5 +1,5 @@
 {
-    "name": "apscreativas/oxxopay",
+    "name": "apscreativas/conekta-pay",
     "description": "ConektaPackage for Laravel",
     "type": "laravel",
     "require": {
