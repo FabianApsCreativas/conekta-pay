@@ -4,7 +4,7 @@ namespace ApsCreativas\OxxoPay;
 
 use Illuminate\Support\ServiceProvider;
 
-class OxxoPayServiceProvider extends ServiceProvider
+class ConektaPayServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
