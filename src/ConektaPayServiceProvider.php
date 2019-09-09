@@ -1,6 +1,6 @@
 <?php
 
-namespace ApsCreativas\OxxoPay;
+namespace ApsCreativas\ConektaPay;
 
 use Illuminate\Support\ServiceProvider;
 
