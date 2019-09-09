@@ -1,0 +1,26 @@
+{
+    "name": "apscreativas/oxxopay",
+    "description": "ConektaPackage for Laravel",
+    "type": "laravel",
+    "require": {
+        "conekta/conekta-php": "4.0.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabián Montero Rodríguez",
+            "email": "fabian.montero@apscreativas.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "classmap": [
+            "src"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": "ApsCreativas\\ConektaPay\\ConektaPayServiceProvider"
+        }
+    }
+}
