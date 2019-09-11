@@ -29,12 +29,12 @@ class ConektaPayServiceProvider extends ServiceProvider
         
         $this->loadRoutesFrom(__DIR__ . '/routes/webhooks.php');
 
-        
-
         $this->publishes([
             __DIR__ . '/config/conekta.php' => config_path('conekta.php'),
             __DIR__ . '/migrations/2019_08_28_161440_add_conekta_pay_to_users.php' => database_path('/migrations'.'/2019_08_28_161440'.'_add_conekta_pay_to_users.php'),
             __DIR__ . '/migrations/2019_08_28_183530_create_orders_table.php' => database_path('/migrations/2019_08_28_183530_create_orders_table.php'),
+            __DIR__ . '/events/ConektaEvent.php' => app_path('Events/ConektaEvent.php'),
+            __DIR__ . '/listeners/ConektaListener.php' => app_path('Events/ConektaListener.php'),
 
         ], 'conektapay');
     }

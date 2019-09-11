@@ -1,11 +1,11 @@
 <?php
 
+use App\Events\ConektaEvent;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 
 Route::prefix('conekta')->group(function () {
     Route::post('webhook', function (Request $request) {
-        switch ($request->data['type']) {
+        switch ($request->type) {
             case 'order.paid':
                 $chargeable = config('conekta.chargeable');
                 $chargeable = new $chargeable;
@@ -15,8 +15,9 @@ Route::prefix('conekta')->group(function () {
                 ]);
                 break;
             default:
-                Log::info($request->all());
                 break;
+                
+            event(new ConektaEvent($request));
         }
     })->name('conekta.webhook');
 });
