@@ -59,18 +59,18 @@ trait Chargeable
         return $this->conekta_charge;
     }
 
-    public function charge($token = null)
+    public function charge($token = null, $type = 'default')
     {
         try {
             $this->conekta_order = Order::find($this->conekta_order_id);
             $this->conekta_charge = $this->conekta_order->createCharge([
                 'payment_method' => [
-                    'type' => ($token) ? $token : 'default',
+                    'type' => $type,
                     'token_id' => $token
                 ]
             ]);
 
-            return $this;
+            return $this->conekta_order;
         } catch (ParameterValidationError $error) {
             throw new Exception($error->getMessage());
         } catch (Handler $error) {
